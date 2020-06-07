@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.WishListFragment"
+        android:label="fragment_wish_list"
+        tools:layout="@layout/fragment_wish_list" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.MessagesFragment"
+        android:label="fragment_messages"
+        tools:layout="@layout/fragment_messages" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/addingAdFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.AddingAdFragment"
+        android:label="fragment_adding_ad"
+        tools:layout="@layout/fragment_adding_ad" />
+</navigation>

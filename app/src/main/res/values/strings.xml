@@ -28,6 +28,7 @@
     <string name="speech">speech</string>
     <string name="floating_button">Floating Button</string>
     <string name="drawer_item">drawer item</string>
+    <string name="ad_item">ad item</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -36,4 +37,25 @@
     <string name="info">
         تطبيق ملتقى الأغنام يوفر لك العديد من  المنتجات المختلفة و يعرض لك العديد من  الإعلانات التي يمكنك الاختيار من خلالها  أفضل المنتجات التي تريدها و يوفرلك أيضا  اماكنية التوصيل إلي المنزل بأسهل  الطرق و أرخص الأسعار
     </string>
+
+    <string name="to_contact_us_via_social_media">
+        للتواصل عبر مواقع التواصل الاجتماعي
+    </string>
+
+    <string name="welcome">
+        مرحبا بك عزيزي الزائر
+    </string>
+
+    <string name="to_contact_us">
+       يمكنك التواصل معنا عبر تلك الطرق
+    </string>
+
+    <string name="more_item_my_ads">إعلاناتي</string>
+    <string name="more_item_change_location">تغيير المدينة</string>
+    <string name="more_item_discount">نظام الخصم</string>
+    <string name="more_item_follow_up">قائمة المتابعة</string>
+    <string name="more_item_banned">قائمة السلع والإعلانات الممنوعة</string>
+    <string name="more_item_black_list">القائمة السوداء</string>
+    <string name="more_item_agreement">معاهدة استخدام الخدمة</string>
+
 </resources>

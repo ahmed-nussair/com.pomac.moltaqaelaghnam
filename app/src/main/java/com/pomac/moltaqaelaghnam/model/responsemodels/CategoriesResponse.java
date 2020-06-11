@@ -1,4 +1,4 @@
-package com.pomac.moltaqaelaghnam.model.responsemedel;
+package com.pomac.moltaqaelaghnam.model.responsemodels;
 
 import com.pomac.moltaqaelaghnam.model.Category;
 

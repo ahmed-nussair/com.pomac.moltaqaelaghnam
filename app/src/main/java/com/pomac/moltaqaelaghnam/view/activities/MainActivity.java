@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pomac.moltaqaelaghnam.Globals;
 import com.pomac.moltaqaelaghnam.R;
 import com.pomac.moltaqaelaghnam.view.adapters.DrawerAdapter;
 import com.pomac.moltaqaelaghnam.view.interfaces.AppNavigator;
@@ -42,6 +45,14 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(Globals.SHARED_PREFERENCES, MODE_PRIVATE);
+
+        if (!sharedPreferences.contains(Globals.AREA_ID)) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt(Globals.AREA_ID, 1);
+            if (editor.commit()) Log.d(Globals.TAG, "Area ID added to shared preferences");
+        }
 
         prepareViews();
 

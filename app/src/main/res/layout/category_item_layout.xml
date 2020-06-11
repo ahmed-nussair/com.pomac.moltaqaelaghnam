@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/categoryTextView"
+    android:layout_width="@dimen/_70sdp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:fontFamily="@font/tajawal_regular"
+    android:gravity="center"
+    android:padding="@dimen/_10sdp">
+
+</TextView>

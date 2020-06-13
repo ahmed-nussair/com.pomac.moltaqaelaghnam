@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pomac.moltaqaelaghnam.R;
+import com.pomac.moltaqaelaghnam.view.interfaces.OnAdSelected;
 import com.pomac.moltaqaelaghnam.view.uimodels.AdItem;
 import com.squareup.picasso.Picasso;
 
@@ -26,10 +28,12 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.AdsViewHolder> {
 
     private Context context;
     private List<AdItem> adItems;
+    private OnAdSelected onAdSelected;
 
-    public AdsAdapter(Context context, List<AdItem> adItems) {
+    public AdsAdapter(Context context, List<AdItem> adItems, OnAdSelected onAdSelected) {
         this.context = context;
         this.adItems = adItems;
+        this.onAdSelected = onAdSelected;
     }
 
     @NonNull
@@ -44,6 +48,10 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.AdsViewHolder> {
         holder.adTitleTextView.setText(adItems.get(position).getTitle());
         holder.phoneTextView.setText(adItems.get(position).getPhone());
         holder.areaTextView.setText(adItems.get(position).getArea());
+
+        holder.adItemRelativeLayout.setOnClickListener(v -> {
+            onAdSelected.onAdSelected(adItems.get(position).getAdId(), adItems.get(position).getTitle());
+        });
 
         Picasso.get()
                 .load(adItems.get(position).getImagePath())
@@ -132,6 +140,7 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.AdsViewHolder> {
         TextView phoneTextView;
         TextView areaTextView;
         TextView adCreationTimeTextView;
+        RelativeLayout adItemRelativeLayout;
 
         public AdsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -140,6 +149,7 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.AdsViewHolder> {
             phoneTextView = itemView.findViewById(R.id.phoneTextView);
             areaTextView = itemView.findViewById(R.id.areaTextView);
             adCreationTimeTextView = itemView.findViewById(R.id.adCreationTimeTextView);
+            adItemRelativeLayout = itemView.findViewById(R.id.adItemRelativeLayout);
         }
     }
 }

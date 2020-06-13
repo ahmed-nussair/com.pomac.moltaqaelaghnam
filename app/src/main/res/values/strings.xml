@@ -58,4 +58,7 @@
     <string name="more_item_black_list">القائمة السوداء</string>
     <string name="more_item_agreement">معاهدة استخدام الخدمة</string>
 
+    <string name="error_connection">حدث خطأ</string>
+    <string name="comments">التعليقات</string>
+
 </resources>

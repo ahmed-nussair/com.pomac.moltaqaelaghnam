@@ -50,4 +50,9 @@
         android:name="com.pomac.moltaqaelaghnam.view.fragments.AddingAdFragment"
         android:label="fragment_adding_ad"
         tools:layout="@layout/fragment_adding_ad" />
+    <fragment
+        android:id="@+id/adDetailsFragment"
+        android:name="com.pomac.moltaqaelaghnam.view.fragments.AdDetailsFragment"
+        android:label="fragment_ad_details"
+        tools:layout="@layout/fragment_ad_details" />
 </navigation>

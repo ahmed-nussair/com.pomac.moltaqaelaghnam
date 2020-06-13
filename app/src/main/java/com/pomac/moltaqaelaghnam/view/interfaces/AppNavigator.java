@@ -19,4 +19,6 @@ public interface AppNavigator {
     void navigateToMorePage();
 
     void navigateToAddingAdPage();
+
+    void navigateToAdDetailsPage(int adId, String adTitle, String source);
 }

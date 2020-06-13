@@ -2,6 +2,8 @@ package com.pomac.moltaqaelaghnam.view.uimodels;
 
 public class AdItem {
 
+    private int adId;
+
     private String title;
 
     private String phone;
@@ -12,12 +14,21 @@ public class AdItem {
 
     private String imagePath;
 
-    public AdItem(String title, String phone, String adDateTime, String area, String imagePath) {
+    public AdItem(int adId, String title, String phone, String adDateTime, String area, String imagePath) {
+        this.adId = adId;
         this.title = title;
         this.phone = phone;
         this.adDateTime = adDateTime;
         this.area = area;
         this.imagePath = imagePath;
+    }
+
+    public int getAdId() {
+        return adId;
+    }
+
+    public void setAdId(int adId) {
+        this.adId = adId;
     }
 
     public String getTitle() {

@@ -23,4 +23,15 @@ public class Globals {
      * Area ID..
      */
     public static int areaId = 1;
+
+    /**
+     * Advertisement ID..
+     */
+    public static final String AD_ID = "ad_id";
+
+    public static final String FROM_WISH_LIST = "wish_list";
+
+    public static final String FROM_MY_ADS = "my_ads";
+
+    public static final String FROM_MAIN = "main";
 }

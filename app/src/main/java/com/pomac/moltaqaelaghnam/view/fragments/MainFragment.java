@@ -11,9 +11,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.pomac.moltaqaelaghnam.Globals;
 import com.pomac.moltaqaelaghnam.R;
 import com.pomac.moltaqaelaghnam.view.adapters.AdsAdapter;
 import com.pomac.moltaqaelaghnam.view.adapters.CategoriesAdapter;
+import com.pomac.moltaqaelaghnam.view.interfaces.AppNavigator;
+import com.pomac.moltaqaelaghnam.view.interfaces.OnAdSelected;
 import com.pomac.moltaqaelaghnam.view.interfaces.OnCategorySelected;
 import com.pomac.moltaqaelaghnam.view.uimodels.AdItem;
 import com.pomac.moltaqaelaghnam.view.uimodels.CategoryItem;
@@ -23,10 +26,12 @@ import com.pomac.moltaqaelaghnam.viewmodel.FilterAdvertisementsViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainFragment extends Fragment implements OnCategorySelected {
+public class MainFragment extends Fragment implements OnCategorySelected, OnAdSelected {
 
     private RecyclerView categoriesRecycleView;
     private RecyclerView adsRecycleView;
+
+    private AppNavigator navigator;
 
     public MainFragment() {
         // Required empty public constructor
@@ -47,6 +52,8 @@ public class MainFragment extends Fragment implements OnCategorySelected {
         super.onActivityCreated(savedInstanceState);
 
         assert getActivity() != null;
+
+        navigator = (AppNavigator) getActivity();
 
         CategoriesViewModel viewModel = ViewModelProviders.of(this).get(CategoriesViewModel.class);
 
@@ -75,6 +82,7 @@ public class MainFragment extends Fragment implements OnCategorySelected {
 
                     for (int i = 0; i < filterAdvertisementsResponse.getData().size(); i++) {
                         AdItem item = new AdItem(
+                                filterAdvertisementsResponse.getData().get(i).getId(),
                                 filterAdvertisementsResponse.getData().get(i).getTitle(),
                                 filterAdvertisementsResponse.getData().get(i).getPhone(),
                                 filterAdvertisementsResponse.getData().get(i).getCreatedAt(),
@@ -84,8 +92,13 @@ public class MainFragment extends Fragment implements OnCategorySelected {
                         adItems.add(item);
                     }
 
-                    adsRecycleView.setAdapter(new AdsAdapter(getActivity(), adItems));
+                    adsRecycleView.setAdapter(new AdsAdapter(getActivity(), adItems, this));
                     adsRecycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 });
+    }
+
+    @Override
+    public void onAdSelected(int adId, String adTitle) {
+        navigator.navigateToAdDetailsPage(adId, adTitle, Globals.FROM_MAIN);
     }
 }

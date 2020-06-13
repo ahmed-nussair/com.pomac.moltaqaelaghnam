@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -150,6 +151,8 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.main_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.mainFragment);
+
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -162,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.wish_list_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.wishListFragment);
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -174,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.notifications_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.notificationsFragment);
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -186,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.messages_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.messagesFragment);
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -198,6 +204,8 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.user_account_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.userFragment);
+
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -211,6 +219,8 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.infoFragment);
 
+        backImageView.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -223,6 +233,8 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.contact_us_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.contactUsFragment);
+
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -235,6 +247,8 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.more_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.moreFragment);
+
+        backImageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -247,5 +261,32 @@ public class MainActivity extends AppCompatActivity implements AppNavigator {
         titleTextView.setText(getString(R.string.adding_ad_page));
 
         Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.addingAdFragment);
+
+        backImageView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void navigateToAdDetailsPage(int adId, String adTitle, String source) {
+        navigationToMainImageView.setImageResource(R.mipmap.home);
+        navigationToWishListImageView.setImageResource(R.mipmap.heart);
+        navigationToNotificationsImageView.setImageResource(R.mipmap.notification);
+        navigationToMessagesImageView.setImageResource(R.mipmap.speech_bubble);
+
+        titleTextView.setText(adTitle);
+
+        Bundle bundle = new Bundle();
+
+        bundle.putInt(Globals.AD_ID, adId);
+
+        Navigation.findNavController(findViewById(R.id.nav_host)).navigate(R.id.adDetailsFragment, bundle);
+
+        backImageView.setVisibility(View.VISIBLE);
+
+        backImageView.setOnClickListener(v -> {
+            if (source.equals(Globals.FROM_MAIN))
+                navigateToMainPage();
+            else if (source.equals(Globals.FROM_WISH_LIST))
+                navigateToWishListPage();
+        });
     }
 }

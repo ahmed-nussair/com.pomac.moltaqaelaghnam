@@ -5,9 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".view.fragments.WishListFragment">
 
+    <ProgressBar
+        android:id="@+id/wishListProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/progress" />
+
+    <TextView
+        android:id="@+id/wishlistLoginFirstTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/tajawal_bold"
+        android:gravity="center"
+        android:text="@string/login_first"
+        android:textColor="@color/AppColor"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/noWishListItemTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/tajawal_bold"
+        android:gravity="center"
+        android:text="@string/no_wish_list_item"
+        android:textColor="@color/AppColor"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/wishListRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </FrameLayout>

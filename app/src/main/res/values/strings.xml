@@ -61,4 +61,15 @@
     <string name="error_connection">حدث خطأ</string>
     <string name="comments">التعليقات</string>
 
+    <string name="no_wish_list_item">لا يوجد لديك أي إعلان في المفضلة</string>
+    <string name="login_first">قم بتسجيل الدخول أولاً</string>
+
+    <string name="user_field">user field</string>
+
+    <string name="user_name_label">الاسم</string>
+    <string name="user_phone_label">الجوال</string>
+    <string name="user_password_label">كلمة المرور</string>
+
+    <string name="user_account_button">حفظ</string>
+
 </resources>

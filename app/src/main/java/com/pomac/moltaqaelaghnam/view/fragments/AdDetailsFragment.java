@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -19,9 +20,14 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.pomac.moltaqaelaghnam.Globals;
 import com.pomac.moltaqaelaghnam.R;
+import com.pomac.moltaqaelaghnam.view.adapters.CommentsAdapter;
+import com.pomac.moltaqaelaghnam.view.uimodels.Comment;
 import com.pomac.moltaqaelaghnam.viewmodel.ShowAdvertisementViewModel;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdDetailsFragment extends Fragment {
 
@@ -101,6 +107,21 @@ public class AdDetailsFragment extends Fragment {
                             .fit()
                             .transform(transformation)
                             .into(adDetailsImageView);
+
+                    List<Comment> comments = new ArrayList<>();
+
+                    for (int i = 0; i < response.getData().getComments().size(); i++) {
+                        Comment comment = new Comment(
+                                response.getData().getComments().get(i).getUser().getName(),
+                                response.getData().getComments().get(i).getComment(),
+                                response.getData().getComments().get(i).getUser().getImage()
+                        );
+
+                        comments.add(comment);
+                    }
+
+                    commentsRecyclerView.setAdapter(new CommentsAdapter(getActivity(), comments));
+                    commentsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
                     adDetailsProgressBar.setVisibility(View.GONE);
                     adContentScrollView.setVisibility(View.VISIBLE);

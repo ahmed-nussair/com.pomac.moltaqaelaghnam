@@ -10,18 +10,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tajawal_bold"
+        android:gravity="center_horizontal"
         android:text="@string/welcome" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tajawal_bold"
+        android:layout_margin="@dimen/_20sdp"
+        android:gravity="center_horizontal"
         android:text="@string/to_contact_us" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tajawal_bold"
+        android:gravity="center_horizontal"
+        android:text="@string/phone_number_label" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@mipmap/contact"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/phone_number_1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@mipmap/contact"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/phone_number_2" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:fontFamily="@font/tajawal_bold"
+        android:gravity="center_horizontal"
         android:text="@string/to_contact_us_via_social_media" />
 
     <LinearLayout
@@ -31,18 +83,21 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/instgramImageView"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_margin="@dimen/_20sdp"
             android:src="@mipmap/instagram" />
 
         <ImageView
+            android:id="@+id/snapImageView"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_margin="@dimen/_20sdp"
             android:src="@mipmap/snapchat" />
 
         <ImageView
+            android:id="@+id/twitterImageView"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_margin="@dimen/_20sdp"

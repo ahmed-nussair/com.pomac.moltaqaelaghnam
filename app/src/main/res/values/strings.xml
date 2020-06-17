@@ -72,4 +72,9 @@
 
     <string name="user_account_button">حفظ</string>
 
+    <string name="phone_number_label">رقم الجوال</string>
+
+    <string name="phone_number_1">0547889754</string>
+    <string name="phone_number_2">0500057905</string>
+
 </resources>
